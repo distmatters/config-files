@@ -1,0 +1,50 @@
+#
+# These things are run when an Openbox X Session is started.
+# You may place a similar script in $HOME/.config/openbox/autostart
+# to run user-specific things.
+
+# Double the scaling for the hiDPI monitor
+xrandr --output eDP-1 --scale .5x.5
+
+# Remap the caps lock key to control
+xmodmap ~/.Xmodmap &
+
+# Compositor
+xcompmgr &
+
+# Tint2 A Window Manager Bar
+sleep 1s && tint2 &
+
+# Nitrogen for setting up the background
+nitrogen --restore &
+
+
+# Start up Conky A cool way to keep track of what is going on
+sleep 2s && conky &
+
+# Network Manager
+sleep 3s && nm-applet &
+
+# XFCE Policykit
+/usr/libexec/xfce-polkit &
+
+# Thunar, but faster
+thunar --daemon &
+
+# XFCE Powermanager 
+sleep 4s && xfce4-power-manager &
+
+# Set up Screen Locking
+light-locker --lock-after-screensaver=30 --lock-on-lid --lock-on-suspend &
+
+# XScreensaver Fuck screensavers.
+# xscreensaver --no-splash &
+
+# Blueman for managing bluetooth devices
+# sleep 5s && blueman-applet
+
+# Icon for controlling the volume. This autoloads as well. weird
+# volumeicon &
+
+# check for updates Not necessary, seems to autoload
+# sleep 6s && dnfdragora-updater &

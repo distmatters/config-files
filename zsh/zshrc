@@ -1,0 +1,56 @@
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=10000
+SAVEHIST=100000
+setopt appendhistory beep extendedglob nomatch notify
+unsetopt autocd
+bindkey -v
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/penny/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+
+###############################################################################
+#                             USER DEFINED OPTIONS                            #
+###############################################################################
+setopt prompt_subst
+
+###############################################################################
+#                                   Z PLUGS                                   #
+###############################################################################
+source ~/.zplug/init.zsh
+# Theme
+zplug "caiogondim/bullet-train.zsh", use:bullet-train.zsh-theme, defer:3
+
+# System plugins
+zplug "plugins/dnf",  from:oh-my-zsh
+zplug "plugins/sudo", from:oh-my-zsh
+
+# Terminal Plugins
+zplug "plugins/history-substring-search", from:oh-my-zsh
+zplug "plugins/globalias",                from:oh-my-zsh
+zplug "plugins/vi-mode",                  from:oh-my-zsh
+zplug "plugins/history",                  from:oh-my-zsh
+
+# Python Plugins
+zplug "plugins/virtualenv", from:oh-my-zsh
+
+
+# Git Plugins
+zplug "plugins/git-prompt", from:oh-my-zsh
+zplug "plugins/git-extras", from:oh-my-zsh
+zplug "plugins/git",        from:oh-my-zsh
+
+# Check to make sure plugins are installed and install then if they are not
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+
+# Load Plugins
+zplug load
