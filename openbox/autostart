@@ -9,6 +9,9 @@ xrandr --output eDP-1 --scale .5x.5
 # Remap the caps lock key to control
 xmodmap ~/.Xmodmap &
 
+# Disable the Touchscreen
+~/.config/kill_touchscreen.sh &
+
 # Compositor
 xcompmgr &
 
@@ -37,8 +40,8 @@ sleep 4s && xfce4-power-manager &
 # Set up Screen Locking
 light-locker --lock-after-screensaver=30 --lock-on-lid --lock-on-suspend &
 
-# XScreensaver Fuck screensavers.
-# xscreensaver --no-splash &
+# XScreensaver Fuck screensavers, and yet no screensaver is fucking things up
+xscreensaver --no-splash &
 
 # Blueman for managing bluetooth devices
 # sleep 5s && blueman-applet
