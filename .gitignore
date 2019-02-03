@@ -18,3 +18,6 @@ Thunar
 pavucontrol.ini
 *.bak
 *backup*
+dnfdragora.yaml
+mimeapps.list
+sublime-text-3
