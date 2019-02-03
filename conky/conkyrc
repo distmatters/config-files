@@ -69,8 +69,8 @@ ${color #4e7aa7}${time %k:%M - %a %b %d, %Y}
 ${color white}$hr
 ${color white}System:
 ${color #4e7aa7}Uptime:${color #DCDCDC} $uptime
+${color #4e7aa7}Battery:${color #DCDCDC} ${battery_percent}% - ${battery_bar}
 ${color #4e7aa7}Frequency (in MHz):${color #DCDCDC} $freq
-${color #4e7aa7}Frequency (in GHz):${color #DCDCDC} $freq_g
 ${color #4e7aa7}RAM Usage:${color #DCDCDC} $mem/$memmax - $memperc% ${membar 4}
 ${color #4e7aa7}Swap Usage:${color #DCDCDC} $swap/$swapmax - $swapperc% ${swapbar 4}
 ${color #4e7aa7}CPU Usage:${color #DCDCDC} $cpu% ${cpubar 4}
