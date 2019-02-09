@@ -1,10 +1,16 @@
-#
-# These things are run when an Openbox X Session is started.
-# You may place a similar script in $HOME/.config/openbox/autostart
-# to run user-specific things.
+###############################################################################
+#                                   DISPLAY                                   #
+###############################################################################
 
 # Double the scaling for the hiDPI monitor
 xrandr --output eDP-1 --scale .5x.5
+
+# Compositor
+xcompmgr &
+
+###############################################################################
+#                                    INPUT                                    #
+###############################################################################
 
 # Remap the caps lock key to control
 xmodmap ~/.Xmodmap &
@@ -12,15 +18,28 @@ xmodmap ~/.Xmodmap &
 # Disable the Touchscreen
 ~/.config/kill_touchscreen.sh &
 
-# Compositor
-xcompmgr &
+###############################################################################
+#                                USER DAEMONS                                 #
+###############################################################################
 
-# Tint2 A Window Manager Bar
-sleep 1s && tint2 &
+# XFCE Policykit
+/usr/libexec/xfce-polkit &
+
+# Thunar daemon, allows thunar to handle removable volumes and more
+thunar --daemon &
 
 # Nitrogen for setting up the background
 nitrogen --restore &
 
+# XScreensaver Fuck screensavers, and yet no screensaver is fucking things up
+xscreensaver --no-splash &
+
+###############################################################################
+#                            System Tray & Status                             #
+###############################################################################
+
+# Tint2 A Window Manager Bar
+sleep 1s && tint2 &
 
 # Start up Conky A cool way to keep track of what is going on
 sleep 2s && conky &
@@ -28,26 +47,23 @@ sleep 2s && conky &
 # Network Manager
 sleep 3s && nm-applet &
 
-# XFCE Policykit
-/usr/libexec/xfce-polkit &
-
-# Thunar, but faster
-thunar --daemon &
-
 # XFCE Powermanager 
 sleep 4s && xfce4-power-manager &
 
-# Set up Screen Locking
-light-locker --lock-after-screensaver=30 --lock-on-lid --lock-on-suspend &
 
-# XScreensaver Fuck screensavers, and yet no screensaver is fucking things up
-xscreensaver --no-splash &
+###############################################################################
+#                               MYSTERY SECTION                               #
+###############################################################################
+
+# This section includes items which are autostarted by some other system. I 
+# would prefer to handle all autostarted software in a consistent manner (this 
+# file) but I have not been able to figure out what is starting this software
 
 # Blueman for managing bluetooth devices
 # sleep 5s && blueman-applet
 
-# Icon for controlling the volume. This autoloads as well. weird
-# volumeicon &
+# System Tray Volume handler, also handles 
+# sleep 6s && volumeicon &
 
-# check for updates Not necessary, seems to autoload
-# sleep 6s && dnfdragora-updater &
+# Update applet + notifications
+# sleep 7s && dnfdragora-updater &
