@@ -128,9 +128,9 @@
     <name>desktop 2</name>
       -->
       <name>Browser</name>
-      <name>Email</name>
       <name>Code</name>
-      <name>Other</name>
+      <name>Work</name>
+      <name>Scratch</name>
     </names>
     <popupTime>875</popupTime>
     <!-- The number of milliseconds to show the popup for when switching
