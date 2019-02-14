@@ -23,6 +23,11 @@
       <prompt>yes</prompt>
     </action>
   </item>
+  <item label="Suspend">
+    <action name="Execute">
+      <command>systemctl suspend</command>
+    </action>
+  </item>
   <separator/>
   <item label="Log Out">
     <action name="SessionLogout">

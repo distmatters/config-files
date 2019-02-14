@@ -329,7 +329,7 @@
     </keybind>
     <keybind key="W-l">
       <action name="Execute">
-        <command>dm-tool lock</command>
+        <command>xdg-screensaver lock</command>
       </action>
     </keybind>
   </keyboard>
