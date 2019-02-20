@@ -38,6 +38,9 @@ xscreensaver &
 #                            System Tray & Status                             #
 ###############################################################################
 
+# Dunst notification system
+dunst &
+
 # Tint2 A Window Manager Bar
 sleep 1s && tint2 &
 
