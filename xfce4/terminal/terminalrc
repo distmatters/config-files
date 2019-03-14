@@ -29,8 +29,8 @@ ScrollingBar=TERMINAL_SCROLLBAR_NONE
 ScrollingLines=10000
 ScrollingUnlimited=TRUE
 FontName=Inconsolata 10
-ColorPalette=rgb(63,63,63);rgb(182,72,81);rgb(96,180,138);rgb(223,175,143);rgb(154,184,215);rgb(220,140,195);rgb(140,208,211);rgb(182,149,155);rgb(144,105,111);rgb(212,176,176);rgb(114,213,163);rgb(240,223,175);rgb(148,191,243);rgb(236,147,211);rgb(147,224,227);rgb(255,255,255)
-ColorForeground=#dcdcdc
-ColorBackground=#2c2c2c
-ColorCursor=#dcdcdc
+ColorForeground=#3433e2e2e2e2
+ColorPalette=#073642;#dc322f;#859900;#b58900;#268bd2;#d33682;#2aa198;#eee8d5;#002b36;#cb4b16;#586e75;#657b83;#839496;#6c71c4;#93a1a1;#fdf6e3
+ColorCursor=x
+ColorBackground=#00002b2b3636
 

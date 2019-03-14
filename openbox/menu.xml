@@ -23,15 +23,23 @@
       <prompt>yes</prompt>
     </action>
   </item>
-  <item label="Suspend">
-    <action name="Execute">
-      <command>systemctl suspend</command>
-    </action>
-  </item>
+  
   <separator/>
   <item label="Log Out">
     <action name="SessionLogout">
       <prompt>yes</prompt>
+    </action>
+  </item>
+  <item label="Reboot">
+    <action name="Execute">
+      <command>systemctl reboot</command>
+      <prompt>Reboot the System?</prompt>
+    </action>
+  </item>
+  <item label="Shutdown">
+    <action name="Execute">
+      <command>systemctl poweroff</command>
+      <prompt>Shutdown System?</prompt>
     </action>
   </item>
 </menu>

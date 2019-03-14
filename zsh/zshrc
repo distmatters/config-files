@@ -18,6 +18,10 @@ compinit
 ###############################################################################
 setopt prompt_subst
 
+# Add my local path for lua modules
+export LUA_PATH="/home/penny/bin/luamods/?.lua;/home/penny/bin/luamods/?/init.lua;;"
+# Set less to do 4 spaces for tabs by default
+export LESS="-x4"
 ###############################################################################
 #                                   Z PLUGS                                   #
 ###############################################################################
@@ -25,7 +29,7 @@ source ~/.zplug/init.zsh
 # Theme
 zplug "caiogondim/bullet-train.zsh", use:bullet-train.zsh-theme, defer:3
 
-# System plugins
+# System plugins, specific to fedora and linux
 zplug "plugins/dnf",  from:oh-my-zsh
 zplug "plugins/sudo", from:oh-my-zsh
 

@@ -19,11 +19,11 @@ border_width = 0
 border_sides = TBLR
 border_content_tint_weight = 0
 background_content_tint_weight = 0
-background_color = #4e7aa7 100
+background_color = #002b36 100
 border_color = #12aa30 30
 background_color_pressed = #000000 60
 border_color_pressed = #000000 30
-gradient_id = 1
+
 
 # Background 2: Tooltip
 rounded = 1
@@ -42,14 +42,14 @@ border_color_pressed = #000000 100
 # Panel                               #
 #-------------------------------------#
 panel_items = S
-panel_size = 36 400
+panel_size = 400 36
 panel_margin = 0 0
 panel_padding = 2 0 2
 panel_background_id = 1
 wm_menu = 1
-panel_position = bottom right vertical
+panel_position = bottom right horizontal
 panel_dock = 0
-panel_layer = top
+panel_layer = bottom
 panel_monitor = all
 panel_shrink = 0
 autohide = 0

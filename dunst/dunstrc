@@ -61,10 +61,10 @@
 
     # Defines width in pixels of frame around the notification window.
     # Set to 0 to disable.
-    frame_width = 3
+    frame_width = 2
 
     # Defines color of the frame around the notification window.
-    frame_color = "#4e7aa7"
+    frame_color = "#073642"
 
     # Define a color for the separator.
     # possible values are:
@@ -125,7 +125,7 @@
     #   %n  progress value if set without any extra characters
     #   %%  Literal %
     # Markup is allowed
-    format = "<b>%a</b> - %s\n%b"
+    format = "<b>%a</b> - %s\n%b\n%p"
 
     # Alignment of message text.
     # Possible values are "left", "center" and "right".
@@ -162,10 +162,10 @@
     icon_position = right
 
     # Scale larger icons down to this size, set to 0 to disable
-    max_icon_size = 64
+    max_icon_size = 32
 
     # Paths to default icons.
-    icon_path = /usr/share/icons/EvoPop/64x64/status/:/usr/share/icons/EvoPop/64x64/devices/
+    icon_path = /usr/share/icons/Paper/32x32/status/:/usr/share/icons/Paper/32x32/devices/
 
     ### History ###
 
@@ -245,23 +245,23 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#cdcdcd"
-    foreground = "#3c3c3c"
+    background = "#002b36"
+    foreground = "#586e75"
     timeout = 0
     # Icon for notifications with low urgency, uncomment to enable
     #icon = /path/to/icon
 
 [urgency_normal]
-    background = "#cdcdcd"
-    foreground = "#3c3c3c"
+    background = "#002b36"
+    foreground = "#586e75"
     timeout = 0
     # Icon for notifications with normal urgency, uncomment to enable
     #icon = /path/to/icon
 
 [urgency_critical]
-    background = "#cdcdcd"
-    foreground = "#3c3c3c   "
-    frame_color = "#ff0000"
+    background = "#002b36"
+    foreground = "#dc322f"
+    frame_color = "#dc322f"
     timeout = 0
     # Icon for notifications with critical urgency, uncomment to enable
     #icon = /path/to/icon

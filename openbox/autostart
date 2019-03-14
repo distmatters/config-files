@@ -3,10 +3,10 @@
 ###############################################################################
 
 # Double the scaling for the hiDPI monitor
-xrandr --output eDP-1 --scale .5x.5
+xrandr --output eDP-1 --scale .5x.5 &
 
 # Compositor
-xcompmgr &
+compton -b --no-fading-openclose &
 
 ###############################################################################
 #                                   INPUTS                                    #
@@ -25,14 +25,14 @@ xmodmap ~/.Xmodmap &
 # XFCE Policykit handle elevating permissions for graphical software
 /usr/libexec/xfce-polkit &
 
-# Thunar daemon, allows thunar to handle removable volumes and more
-thunar --daemon &
+# Start PCManFM in daemon mode
+pcmanfm -d &
 
 # Nitrogen for setting up the background
 nitrogen --restore &
 
-# XScreensaver, not my favorite, but it works like a champ
-xscreensaver &
+# Light Locker, Since XScreenSaver did not fix my suspend issues 
+light-locker --lock-on-lid --idle-hint --lock-after-screensaver=5 --no-late-locking &
 
 ###############################################################################
 #                            System Tray & Status                             #
@@ -41,8 +41,8 @@ xscreensaver &
 # Dunst notification system
 dunst &
 
-# Tint2 A Window Manager Bar
-sleep 1s && tint2 &
+# Stalonetray
+sleep 1s && stalonetray --kludges force_icon_size &
 
 # Start up Conky A cool way to keep track of what is going on
 sleep 2s && conky &
@@ -52,6 +52,12 @@ sleep 3s && nm-applet &
 
 # XFCE Powermanager 
 sleep 4s && xfce4-power-manager &
+
+# Redshift - for changing color temperature to prevent insomnia
+sleep 5s && redshift-gtk &
+
+# System Tray Volume handler, also handles 
+sleep 6s && pnmixer &
 
 
 ###############################################################################
@@ -63,9 +69,9 @@ sleep 4s && xfce4-power-manager &
 # file) but I have not been able to figure out what is starting this software
 
 # Blueman for managing bluetooth devices
-# sleep 5s && blueman-applet
+# sleep 5s && blueberry-tray	
 
-# System Tray Volume handler, also handles 
+
 # sleep 6s && volumeicon &
 
 # Update applet + notifications
