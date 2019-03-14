@@ -1,0 +1,5 @@
+background "#002b36"
+dockapp_mode simple
+icon_size 32
+slot_size 40
+geometry 10x1
