@@ -41,8 +41,8 @@ light-locker --lock-on-lid --idle-hint --lock-after-screensaver=5 --no-late-lock
 # Dunst notification system
 dunst &
 
-# Stalonetray
-sleep 1s && stalonetray --kludges force_icon_size &
+# Stalonetray System Notificiation in the dock
+sleep 1s && stalonetray &
 
 # Start up Conky A cool way to keep track of what is going on
 sleep 2s && conky &
@@ -69,10 +69,6 @@ sleep 6s && pnmixer &
 # file) but I have not been able to figure out what is starting this software
 
 # Blueman for managing bluetooth devices
-# sleep 5s && blueberry-tray	
+# sleep 7s && blueberry-tray	
 
-
-# sleep 6s && volumeicon &
-
-# Update applet + notifications
-# sleep 7s && dnfdragora-updater &
+# Update applet + notifications sleep 8s && dnfdragora-updater &
