@@ -83,8 +83,8 @@ ${color white}File systems:
  ${color #4e7aa7}/home ${color #DCDCDC}${fs_used /home}/${fs_size /home} ${fs_bar 6 /root}
 ${color white}$hr
 ${color white}Networking:
-${color #4e7aa7}Up:${color #DCDCDC} ${upspeed wlp2s0}  ${goto 240}${color #4e7aa7}  Down:${color white} ${downspeed wlp2s0}
-${color #4e7aa7}Signal: ${color #DCDCDC}${wireless_link_qual wlp2s0}%
+${color #4e7aa7}Signal: ${color #DCDCDC}${wireless_link_qual wlp2s0}% ${goto 200}${color #4e7aa7}  SSID:${color white} ${wireless_essid wlp2s0}
+${color #4e7aa7}Up:${color #DCDCDC} ${upspeed wlp2s0}  ${goto 200}${color #4e7aa7}  Down:${color white} ${downspeed wlp2s0}
 $hr
 Clock Killers:
 ${color #4e7aa7}Name                PID   CPU%   
