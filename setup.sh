@@ -1,20 +1,11 @@
 #/bin/zsh
+# Sammi Kiel
 
-###############################################################################
-#                              PLUGIN  MANAGERS                               #
-###############################################################################
-# This sections is to install third party plugin managers, e.g. zplugs
-
-# zplug
-curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
-
-# TMUX Plugin Manager
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-
-# vim-plug
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
+# This script is designed to get my laptop up and running after an operating
+# system reinstall. It starts by creating symlinks from the config folder 
+# (where this repository is intended to reside) and the user's home folder.
+# Once this is completed the script installs plugin managers for common 
+# software I use (zsh, tmux, and vim). This is followed 
 
 ###############################################################################
 #                              CREATE  SYMLINKS                               #
@@ -34,8 +25,26 @@ links[conkyrc]="conky/conkyrc"
 links[tmux.conf]="tmux/tmux.conf"
 
 # Iterate over the elements creating links
-for k v in ${(kv)links}; do 
-	LINK=`echo "$HOME/.$k"`
-	TARGET=`echo "$HOME/.config/$v"`
+for K V in ${(kv)links}; do 
+	LINK=`echo "$HOME/.$K"`
+	TARGET=`echo "$HOME/.config/$V"`
 	ln -s $TARGET $LINK
 done
+
+
+###############################################################################
+#                              PLUGIN  MANAGERS                               #
+###############################################################################
+# This sections is to install third party plugin managers, e.g. zplugs
+
+# zplug
+curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
+
+# TMUX Plugin Manager
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+# vim-plug
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+
