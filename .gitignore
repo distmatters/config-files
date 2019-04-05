@@ -26,3 +26,5 @@ autostart
 sealert.conf
 enchant
 libfm
+vim/autoload
+vim/plugged
