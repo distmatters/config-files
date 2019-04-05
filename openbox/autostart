@@ -42,22 +42,25 @@ light-locker --lock-on-lid --idle-hint --lock-after-screensaver=5 --no-late-lock
 dunst &
 
 # Stalonetray System Notificiation in the dock
-sleep 1s && stalonetray &
+sleep 3s && stalonetray &
 
 # Start up Conky A cool way to keep track of what is going on
-sleep 2s && conky &
+sleep 1s && conky &
 
 # Network Manager
-sleep 3s && nm-applet &
+sleep 1s && nm-applet &
 
 # XFCE Powermanager 
-sleep 4s && xfce4-power-manager &
+sleep 1s && xfce4-power-manager &
 
 # Redshift - for changing color temperature to prevent insomnia
-sleep 5s && redshift-gtk &
+sleep 1s && redshift-gtk &
 
 # System Tray Volume handler, also handles 
-sleep 6s && pnmixer &
+sleep 1s && pnmixer &
+
+# Clipboard manager
+sleep 1s && clipit &
 
 
 ###############################################################################
@@ -71,4 +74,5 @@ sleep 6s && pnmixer &
 # Blueman for managing bluetooth devices
 # sleep 7s && blueberry-tray	
 
-# Update applet + notifications sleep 8s && dnfdragora-updater &
+# Update applet + notifications 
+#sleep 8s && dnfdragora-updater &

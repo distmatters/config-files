@@ -47,7 +47,7 @@ zplug "plugins/git-prompt", from:oh-my-zsh
 zplug "plugins/git-extras", from:oh-my-zsh
 zplug "plugins/git",        from:oh-my-zsh
 
-# Check to make sure plugins are installed and install then if they are not
+# Check to make sure plugins are installed and install them if they are not
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
     if read -q; then
