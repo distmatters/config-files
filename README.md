@@ -13,7 +13,7 @@ related to the use of my particular laptop - a Dell XPS 9370. These include
 kill_touchscreen.sh which turns off the laptops touchscreen, and setup.sh which
 creates symlinks and installs plugin managers after a fresh install. 
 
-## In Conclusion
+## License
 
 If any of the scripts or configs are useful for your work or personal life feel
 free to use modify them etc. I've set the license to BSD 3-clause but even that
