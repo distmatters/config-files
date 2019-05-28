@@ -53,10 +53,12 @@ endif
 " Install plugins
 filetype off
 call plug#begin('~/.vim/plugged')
+	Plug 'powerline/powerline'
 	Plug 'altercation/vim-colors-solarized'
 	Plug 'scrooloose/nerdtree'
 	Plug 'Xuyuanp/nerdtree-git-plugin'
 	Plug 'vim-latex/vim-latex'
+	Plug 'zizhongyan/vim-stata'
 cal plug#end()
 
 " Turn Syntax highlighting etc. on. 
