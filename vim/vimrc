@@ -1,8 +1,8 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                           SAMMI KIEL'S AMAZING VIMRC                         "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""""""""""""""""""
-"   The Basics   "
+
+"   The Basics
 """"""""""""""""""
 set nocompatible
 
@@ -40,31 +40,55 @@ map <C-l> <C-W>l
 map <C-h> <C-W>h
 map <C-k> <C-W>k
 
-""""""""""""""""
-"   Vim Plug   "
-""""""""""""""""
 
+"   Vim Plug
+""""""""""""""""
 " Install Vim Plug
 if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+	silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 " Install plugins
 filetype off
 call plug#begin('~/.vim/plugged')
-	Plug 'powerline/powerline'
+	Plug 'vim-airline/vim-airline'
+	Plug 'vim-airline/vim-airline-themes'
+	Plug 'tpope/vim-fugitive'
+	Plug 'vim-syntastic/syntastic'
 	Plug 'altercation/vim-colors-solarized'
 	Plug 'scrooloose/nerdtree'
 	Plug 'Xuyuanp/nerdtree-git-plugin'
-	Plug 'vim-latex/vim-latex'
+	Plug 'lervag/vimtex'
 	Plug 'zizhongyan/vim-stata'
-cal plug#end()
+call plug#end()
 
 " Turn Syntax highlighting etc. on. 
 filetype indent plugin on
 syntax enable 
 
-" Configure installed plugins
+"    Plugin Seetings
+"""""""""""""""""""""""""
+" Turn on solarized
 set background=dark
 colorscheme solarized
+
+" Setup airline
+set laststatus=2
+
+let g:airline#extensions#tabline#enabled = 1
+
+
+" Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_aggregate_errors = 1
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_tex_checkers = ['lacheck', 'text/language_check']
+
+
