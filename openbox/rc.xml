@@ -327,7 +327,7 @@
         <command>xfce4-appfinder</command>
       </action>
     </keybind>
-    <keybind key="C-r">
+    <keybind key="W-r">
       <action name="Execute">
         <command>xfce4-appfinder --collapsed</command>
       </action>
