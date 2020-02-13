@@ -1,0 +1,116 @@
+\documentclass[12pt,letterpaper]{article}
+% TexMemo Headers
+\RequirePackage{ifthen}
+\usepackage{fixltx2e}
+\usepackage{tabto}
+\usepackage{enumitem}
+\usepackage{booktabs} % Better tables
+\usepackage{amsmath} % If mathematical Formula are required
+\usepackage{graphicx} % Images required?
+%\usepackage[section]{placeins}	% Change the placement of tables and figures
+
+\usepackage{booktabs} % Better tables
+\usepackage{amsmath} % If mathematical Formula are required
+\usepackage{graphicx} % Images required?
+
+% Font Settings
+\usepackage{fontspec}
+
+% Set spacing options
+\usepackage{setspace}
+
+% Title Formatting
+\usepackage{titlesec}
+
+% Citation Packages
+\usepackage[american]{babel}
+\usepackage[babel]{csquotes}
+\usepackage[notes,isbn=false,backend=biber]{biblatex-chicago}
+
+
+% Custom Document Formatting
+\newcommand\decorativeline[1][1pt]{
+	\par\noindent%
+	\rule[0.5ex]{\linewidth}{#1}\par
+}
+
+
+
+\linespread{1}
+\addbibresource{$bibliography$}
+\urlstyle{same}
+
+% Other useful packages
+%\usepackage{pdflscape}
+\PassOptionsToPackage{hyphens}{url}\usepackage[colorlinks]{hyperref}
+\hypersetup{	pdfborder	=	0 0 0,
+				linkcolor	=	blue, 
+				urlcolor	=	blue,
+				citecolor	=	black }
+
+
+% Set Main Font
+$if(mainfont)$
+	\setmainfont{$mainfont$}[
+		Ligatures = TeX,
+		$for(mainfontoptions)$$mainfontoptions$$sep$,$endfor$]
+$endif$
+
+% Set Sans font
+$if(sansfont)$
+	\setsansfont{$sansfont$}[
+		Ligatures = TeX,
+		$for(sansfontoptions)$$sansfontoptions$$sep$,$endfor$]
+$endif$
+			
+$if(monofont)$
+	\setmonofont[Ligatures = TeX]{$monofont$}
+$endif$
+
+% Header Formatting
+
+\titleformat*{\section}{\normalsize \bfseries \sffamily}
+\titleformat*{\subsection}{\normalsize \slshape \sffamily}
+\titleformat*{\subsubsection}{\normalsize \sffamily}
+\titleformat*{\paragraph}{\sffamily}
+\titleformat*{\subparagraph}{\slshape \sffamily}
+
+% Header Spacing
+\titlespacing\section{0pt}{16pt plus 6pt minus 4pt}{4pt plus 2pt minus 2pt}
+\titlespacing\subsection{0pt}{12pt plus 4pt minus 2pt}{4pt plus 2pt minus 2pt}
+\titlespacing\subsubsection{0pt}{12pt plus 4pt minus 2pt}{4pt plus 2pt minus 2pt}
+
+% Create the Letterhead and To/From Block
+\renewcommand{\maketitle}{\makememotitle}
+\newcommand\makememotitle{
+	$if(memologo)$
+	{ % Create With Logo
+	\begin{minipage}[t]{1\columnwidth}%
+		\begin{flushright}
+			\vspace{-0.6in}
+			$logo$
+			\vspace{0.5in}
+		\par\end{flushright}%
+	\end{minipage}
+	}
+	$endif$
+	% To, From, Subject Block
+	\begin{description}[noitemsep]
+		$if(to)$\item [{\sffamily To:}] \tabto{24 pt} $to$$endif$
+		$if(author)$\item [{\sffamily From:}] \tabto{24 pt} $author$$endif$
+		$if(title)$\item [{\sffamily Subject:}] \tabto{24 pt} $title$$endif$
+		$if(date)$\item [{\sffamily Date:}] \tabto{24 pt} $date$$endif$
+	\end{description} \vspace{-1em}
+	\decorativeline
+}
+
+
+\begin{document}
+{
+	\singlespace
+	\maketitle
+}
+
+$body$
+
+\end{document}
