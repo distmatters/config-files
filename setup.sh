@@ -25,9 +25,10 @@ links[conkyrc]="conky/conkyrc"
 links[tmux.conf]="tmux/tmux.conf"
 
 # Iterate over the elements creating links
-for K V in ${(kv)links}; do 
+# for K in "${!MYMAP[@]}"
+for K in "${!links[@]}"; do 
 	LINK=`echo "$HOME/.$K"`
-	TARGET=`echo "$HOME/.config/$V"`
+	TARGET=`echo "$HOME/.config/${links[$K]}"`
 	ln -s $TARGET $LINK
 done
 
