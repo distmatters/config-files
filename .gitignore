@@ -2,6 +2,7 @@
 # candidates for 
 *.bak
 *backup*
+.netrwhist
 abrt
 atril
 autostart
