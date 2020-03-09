@@ -56,7 +56,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'vim-airline/vim-airline-themes'
 	Plug 'tpope/vim-fugitive'
 	Plug 'vim-syntastic/syntastic'
-	Plug 'altercation/vim-colors-solarized'
+	Plug 'sickill/vim-monokai'
 	Plug 'scrooloose/nerdtree'
 	Plug 'Xuyuanp/nerdtree-git-plugin'
 	Plug 'lervag/vimtex'
@@ -69,9 +69,9 @@ syntax enable
 
 "    Plugin Seetings
 """""""""""""""""""""""""
-" Turn on solarized
+" Turn on monokai theme
 set background=dark
-colorscheme solarized
+colorscheme monokai
 
 " Setup airline
 set laststatus=2

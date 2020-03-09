@@ -7,7 +7,7 @@ unsetopt autocd
 bindkey -v
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/penny/.zshrc'
+zstyle :compinstall filename '/home/sammi/.zshrc'
 
 autoload -Uz compinit
 compinit
@@ -19,7 +19,7 @@ compinit
 setopt prompt_subst
 
 # Add my local path for lua modules
-export LUA_PATH="/home/penny/bin/luamods/?.lua;/home/penny/bin/luamods/?/init.lua;;"
+export LUA_PATH="/home/sammi/bin/luamods/?.lua;/home/sammi/bin/luamods/?/init.lua;;"
 # Set less to do 4 spaces for tabs by default
 export LESS="-x4"
 # Aliases

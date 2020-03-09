@@ -31,7 +31,7 @@ for K in "${!links[@]}"; do
 	TARGET=`echo "$HOME/.config/${links[$K]}"`
 	ln -s $TARGET $LINK
 done
-
+ln -s "$HOME/.local/share/pandoc" "$HOME/.config/pandoc"
 
 ###############################################################################
 #                              PLUGIN  MANAGERS                               #
