@@ -20,6 +20,10 @@ setopt prompt_subst
 
 # Add my local path for lua modules
 export LUA_PATH="/home/sammi/bin/luamods/?.lua;/home/sammi/bin/luamods/?/init.lua;;"
+
+# Set Qt Pixel Ratio
+export QT_SCALE_FACTOR=2
+
 # Set less to do 4 spaces for tabs by default
 export LESS="-x4"
 # Aliases
