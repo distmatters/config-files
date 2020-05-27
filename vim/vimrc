@@ -11,11 +11,11 @@ set tabstop=4 softtabstop=0 noexpandtab shiftwidth=4 smarttab
 set autoindent
 
 " line wrapping
-set wrap
-set linebreak
-set nolist
-set textwidth=0
-set wrapmargin=80
+"set wrap
+"set linebreak
+"set nolist
+"set textwidth=0
+"set wrapmargin=80
 
 " Convenience features
 set hidden
