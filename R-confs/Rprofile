@@ -1,0 +1,2 @@
+# Set library Path 
+.libPaths("~/bin/rlibs")

@@ -19,7 +19,9 @@ compinit
 setopt prompt_subst
 
 # Add my local path for lua modules
-export LUA_PATH="/home/sammi/bin/luamods/?.lua;/home/sammi/bin/luamods/?/init.lua;;"
+export LUA_PATH="~/bin/luamods/?.lua;/home/sammi/bin/luamods/?/init.lua;;"
+
+export  R_LIBS_USER="~/bin/rlibs"
 
 # Set Qt Pixel Ratio
 export QT_SCALE_FACTOR=2

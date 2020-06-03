@@ -1,29 +1,4 @@
 -- vim: ts=4 sw=4 noet ai cindent syntax=lua
---[[
-Conky, a system monitor, based on torsmo
-
-Any original torsmo code is licensed under the BSD license
-
-All code written since the fork of torsmo is licensed under the GPL
-
-Please see COPYING for details
-
-Copyright (c) 2004, Hannu Saransaari and Lauri Hakkarainen
-Copyright (c) 2005-2012 Brenden Matthews, Philip Kovacs, et. al. (see AUTHORS)
-All rights reserved.
-
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.
-]]
 
 conky.config = {
     alignment = 'top_right',
@@ -46,7 +21,7 @@ conky.config = {
     use_xft = true,
     font = 'Space Mono:size=18',
     gap_x = 5,
-    gap_y =	65,
+    gap_y =	10,
     minimum_height = 5,
 	minimum_width = 600,
     maximum_width = 600,
@@ -66,39 +41,61 @@ conky.config = {
 
 
 conky.text = [[
-${color #AE81FF}${time %k:%M - %a %b %d, %Y}
+${goto 240}${color #E6DB74}${font SpaceMono:size=30}$nodename${font SpaceMono:size=18}
+${color #66D9EF}Clock:
+${color #AE81FF}Time: ${color #F8F8F2}${time %H:%M:%S}${goto 350}${color #AE81FF}Date:${color #F8F8F2} ${time %Y-%m-%d}
+${color #AE81FF}Month:${color #F8F8F2} ${time %b}${goto 260}${color #AE81FF}Day:${color #F8F8F2} ${time %a}${goto 485}${color #AE81FF}TZ:${color #F8F8F2} ${time %Z}
 ${color #F8F8F2}$hr
-${color #F8F8F2}System:
-${color #AE81FF}Uptime:${color #66D9EF} $uptime
-${color #AE81FF}Battery:${color #66D9EF} ${battery_percent}% - ${battery_bar}
-${color #AE81FF}Frequency (in MHz):${color #66D9EF} $freq
-${color #AE81FF}RAM Usage:${color #66D9EF} $mem/$memmax - $memperc% ${membar 4}
-${color #AE81FF}Swap Usage:${color #66D9EF} $swap/$swapmax - $swapperc% ${swapbar 4}
-${color #AE81FF}CPU Usage:${color #66D9EF} $cpu% ${cpubar 4}
-${cpubar cpu1 4,90} ${cpubar cpu1 4,90} ${cpubar cpu3 4,90} ${cpubar cpu4 4,90}
-${cpubar cpu5 4,90} ${cpubar cpu6 4,90} ${cpubar cpu7 4,90} ${cpubar cpu8 4,90}
-${color #AE81FF}Processes:${color #66D9EF} $processes  ${color #AE81FF}Running:${color #66D9EF} $running_processes
+
+${voffset -20}${color #66D9EF}System:
+${color #AE81FF}Uptime:${color #F8F8F2}${goto 200}$uptime
+${color #AE81FF}Battery:${color #F8F8F2}${goto 200}${battery_percent}%
+${goto 300}${voffset -32}${battery_bar 18,300}
+${color #AE81FF}CPU Usage:${color #F8F8F2}${goto 200}$cpu% 
+${goto 300}${voffset -32}${cpubar cpu0 18,300}
+${color #AE81FF}Freq (MHz):${goto 200}${color #F8F8F2}$freq
+${color #AE81FF}Threads:${color #F8F8F2} $processes  
+${goto 350}${voffset -36}${color #AE81FF}Active:${color #F8F8F2} $running_threads
+${cpubar cpu1 12,140}
+${goto 150}${voffset -36}${cpubar cpu2 12,140}
+${goto 300}${voffset -36}${cpubar cpu3 12,140}
+${goto 450}${voffset -36}${cpubar cpu4 12,150}
+${cpubar cpu5 12,140}
+${goto 150}${voffset -36}${cpubar cpu6 12,140}
+${goto 300}${voffset -36}${cpubar cpu7 12,140}
+${goto 450}${voffset -36}${cpubar cpu8 12,150}
+${color #AE81FF}RAM:${color #F8F8F2} $mem/$memmax - $memperc% 
+${goto 450}${voffset -32}${membar 18,150}
+${color #AE81FF}Swap:${color #F8F8F2} $swap/$swapmax - $swapperc% 
+${goto 450}${voffset -30}${swapbar 18,150}
 $hr
-${color #F8F8F2}File systems:
- ${color #AE81FF}/     ${color #66D9EF}${fs_used /}/${fs_size /} ${fs_bar 6 /}
- ${color #AE81FF}/home ${color #66D9EF}${fs_used /home}/${fs_size /home} ${fs_bar 6 /root}
+
+${voffset -20}${color #66D9EF}File systems:
+${color #AE81FF}sda 3 ${color #F8F8F2}${fs_used /}/${fs_size /}
+${goto 300}${voffset -32}${fs_bar 18,300 /}
 ${color #F8F8F2}$hr
-${color #F8F8F2}Networking:
-${color #AE81FF}Signal: ${color #66D9EF}${wireless_link_qual wlp2s0}% ${goto 200}${color #AE81FF}  SSID:${color #66D9EF} ${wireless_essid wlp2s0}
-${color #AE81FF}Up:${color #66D9EF} ${upspeed wlp2s0}  ${goto 200}${color #AE81FF}  Down:${color #66D9EF} ${downspeed wlp2s0}
+
+${voffset -20}${color #66D9EF}Networking:
+${color #AE81FF}SSID:${color #F8F8F2} ${wireless_essid wlp2s0}
+${color #AE81FF}IP:${color #F8F8F2} ${addr wlp2s0}${goto 350}${color #AE81FF}Signal: ${color #F8F8F2}${wireless_link_qual wlp2s0}% 
+${color #AE81FF}Up:${color #F8F8F2} ${upspeed wlp2s0}  
+${voffset -40}${goto 300}${downspeedgraph wlp2s0 60,300 -l}
+${voffset -55}${color #AE81FF}Down:${color #F8F8F2} ${downspeed wlp2s0} 
 $hr
-${color #F8F8F2}Clock Killers:
+
+${voffset -20}${color #66D9EF}Clock Killers:
 ${color #AE81FF}Name         		              PID    CPU%   
-${color #66D9EF} ${top name 1} 		${top pid 1} ${top cpu 1} 
-${color #66D9EF} ${top name 2} 		${top pid 2} ${top cpu 2} 
-${color #66D9EF} ${top name 3} 		${top pid 3} ${top cpu 3} 
-${color #66D9EF} ${top name 4} 		${top pid 4} ${top cpu 4} 
+${color #F8F8F2} ${top name 1} 		${top pid 1} ${top cpu 1} 
+${color #F8F8F2} ${top name 2} 		${top pid 2} ${top cpu 2} 
+${color #F8F8F2} ${top name 3} 		${top pid 3} ${top cpu 3} 
+${color #F8F8F2} ${top name 4} 		${top pid 4} ${top cpu 4} 
 ${color #F8F8F2}$hr
-${color #F8F8F2}Memory Hogs:
+
+${voffset -20}${color #66D9EF}Memory Hogs:
 ${color #AE81FF}Name             	    PID    MEM%
-${color #66D9EF} ${top_mem name 1} 		${top_mem pid 1} ${top_mem mem 1} 
-${color #66D9EF} ${top_mem name 2} 		${top_mem pid 2} ${top_mem mem 2} 
-${color #66D9EF} ${top_mem name 3} 		${top_mem pid 3} ${top_mem mem 3} 
-${color #66D9EF} ${top_mem name 4} 		${top_mem pid 4} ${top_mem mem 4} 
+${color #F8F8F2} ${top_mem name 1} 		${top_mem pid 1} ${top_mem mem 1} 
+${color #F8F8F2} ${top_mem name 2} 		${top_mem pid 2} ${top_mem mem 2} 
+${color #F8F8F2} ${top_mem name 3} 		${top_mem pid 3} ${top_mem mem 3} 
+${color #F8F8F2} ${top_mem name 4} 		${top_mem pid 4} ${top_mem mem 4} 
 
 ]]
